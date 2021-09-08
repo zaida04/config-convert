@@ -1,4 +1,4 @@
-import { inspect } from "node:util";
+import { inspect } from "util";
 import { format } from "prettier";
 import { CONVERT_TYPES, DEFAULT_PRETTIER_CONFIG } from "./util";
 
