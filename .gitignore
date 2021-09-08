@@ -1,0 +1,14 @@
+node_modules/
+dist/
+types/
+coverage/
+
+*.tsbuildinfo
+*.log
+
+.vscode/
+.idea/
+*.env
+
+dummy/test-config2.js
+dummy/test-config1.json
