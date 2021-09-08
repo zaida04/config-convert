@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/config-convert?color=crimson&logo=npm)](https://www.npmjs.com/package/config-convert)
 [![CI workflows](https://github.com/zaida04/config-convert/actions/workflows/ci.yml/badge.svg)](https://github.com/zaida04/config-convert/actions/workflows/ci.yml)
 
-🚀 Need to convert a JS config file to JSON or vice-versa? Are you also very lazy and want a tool to do this for you? Welcome to config-convert
+🚀 Need to convert a JS config file to JSON or vice-versa? Are you also very lazy and want a tool to do this for you? Welcome to config-convert.
 
 ## 📥 Installation
 You can install this package from [NPM](https://www.npmjs.com/package/config-convert)
