@@ -29,12 +29,11 @@ your-project/
 ├─ .eslintrc.js
 ├─ src/
 ├─ package.json
-
 ```
-You have your `.eslintrc.js` file that you want to convert to `.eslintrc.json`. Simply run `config-convert -f .eslintrc.js` and voila! Converted and written to a `.eslintrc.json` file! 
+You have your `.eslintrc.js` file that you want to convert to `.eslintrc.json`.   
+Simply run `config-convert -f .eslintrc.js` and voila! Converted and written to a `.eslintrc.json` file! 
 
 ## ✋ Contributing
-
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 Please ensure any and all commits pass our tests, linting, and build steps

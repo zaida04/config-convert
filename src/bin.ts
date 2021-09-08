@@ -18,24 +18,29 @@ const parser = yargs(process.argv.slice(2))
 
 void (async () => {
     const argv = await parser.argv;
+    // If the user has specified a base dir use that, otherwise default to working directory that the command was executed in.
     const BASE_DIR = argv.baseDir ?? process.cwd();
+    // Resolve the path to the file to be converted. Relative to the base dir.
     const inputPath = resolve(BASE_DIR, argv.file);
+    // If the user does not provide the format they wish to convert to, we can infer since we only offer two options.
     const toFormat = (argv.to && betterLowerCase(argv.to)) ?? [".js", ".cjs", ".mjs"].some((x) => inputPath.endsWith(x)) ? "json" : "js";
-    console.log(toFormat);
 
     logger("Reading input file...");
     const file = await readFile(inputPath, "utf-8");
     logger("Running converter...");
 
+    // convert the file, but if there's an error we want to pretty print it with a readable error.
     let convertedFile;
     try {
-        convertedFile = run(file.trim(), toFormat, { es6: argv.es6 }).replaceAll("\\n", "\n");
+        convertedFile = run(file, toFormat, { es6: argv.es6 }).replaceAll("\\n", "\n");
     } catch (e) {
         logger(`Conversion failed! Make sure your file is formatted correctly! ${e}`, COLORS.RED);
         return;
     }
     logger("Converting succeeded!", COLORS.GREEN);
 
+    // If the user does not provide a path to the file they wish to write the converted data to
+    // we infer it by assuming it's the same file but with a diff extension.
     let outputPath = argv.output;
     if (!outputPath) {
         const temp = parse(inputPath);
