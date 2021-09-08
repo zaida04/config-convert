@@ -20,11 +20,8 @@ void (async () => {
     const argv = await parser.argv;
     const BASE_DIR = argv.baseDir ?? process.cwd();
     const inputPath = resolve(BASE_DIR, argv.file);
-    const toFormat = (argv.to && betterLowerCase(argv.to)) ??
-         [".js", ".cjs", ".mjs"].some((x) => inputPath.endsWith(x)) 
-            ? "json" 
-            : "js";
-    console.log(toFormat)
+    const toFormat = (argv.to && betterLowerCase(argv.to)) ?? [".js", ".cjs", ".mjs"].some((x) => inputPath.endsWith(x)) ? "json" : "js";
+    console.log(toFormat);
 
     logger("Reading input file...");
     const file = await readFile(inputPath, "utf-8");
