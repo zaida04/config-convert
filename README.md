@@ -20,7 +20,7 @@ Options:
   -t, --to       What format to convert to               [choices: "js", "json"]
   -o, --output   The name of the output file.                           [string]
       --es6      For converting to JS, whether to use es6 exports.     [boolean]
-  -b, --baseDir  Set the base dir of where to start a path.             [string]
+  -b, --baseDir  Set the base dir of where to start the path.           [string]
 ```
 ### Examples
 Say we have a directory that looks like this:
