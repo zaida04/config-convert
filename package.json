@@ -1,7 +1,7 @@
 {
   "name": "config-convert",
-  "version": "1.0.0",
-  "description": "🚀 Have a bunch of config files written in JS that you don't feel like converting to JSON by hand? Use this to batch convert them!",
+  "version": "1.0.1",
+  "description": "🚀 Need to convert a JS config file to JSON or vice-versa? Are you also very lazy and want a tool to do this for you? Welcome to config-convert.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "bin": "dist/bin.js",
