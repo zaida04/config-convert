@@ -1,29 +1,29 @@
-import { ParseError, transformJSONToJS, transformJSToJSON} from "../";
+import { ParseError, transformJSONToJS, transformJSToJSON } from "../";
 
 const dummyData = {
     js: {
-        es6: "export default { test: \"hi!\" };\n",
-        commonJS: "module.exports = { test: \"hi!\" };\n"
+        es6: 'export default { test: "hi!" };\n',
+        commonJS: 'module.exports = { test: "hi!" };\n',
     },
-    json: "{\"test\":\"hi!\"}",
+    json: '{\n    "test": "hi!"\n}',
     messedUpData: {
-        js: ["const a = { test: \"hi!\" }", "export const a = { test: \"hi!\" ", "export const a = test: \"hi!\" }"],
-        json: ["\"test\":\"hi!\"}", "{\"test\":\"hi!\""]
+        js: ['const a = { test: "hi!" }', 'export const a = { test: "hi!" ', 'export const a = test: "hi!" }'],
+        json: ['"test":"hi!"}', '{"test":"hi!"'],
     },
-}  as const;
+} as const;
 
 const errorMessages = {
     emptyTransformJS: "Expected data to convert to JSON.",
     emptyTransformJSON: "Expected data to convert to JS.",
     malformedJSData: "Malformed JS data",
     malformedJSONData: "Malformed JSON data",
-    noExport: "No exporting declaration found!"
+    noExport: "No exporting declaration found!",
 } as const;
 
 describe("Transforming JS data to JSON", () => {
     test("Error on empty data", () => {
         expect(() => transformJSToJSON(undefined)).toThrowError(new TypeError(errorMessages.emptyTransformJS));
-        expect(() => transformJSToJSON("")).toThrowError(new TypeError(errorMessages.emptyTransformJS))
+        expect(() => transformJSToJSON("")).toThrowError(new TypeError(errorMessages.emptyTransformJS));
     });
     test("Error on no export in data", () => {
         expect(() => transformJSToJSON(dummyData.messedUpData.js[0])).toThrowError(new ParseError(errorMessages.noExport));
@@ -33,8 +33,8 @@ describe("Transforming JS data to JSON", () => {
         expect(() => transformJSToJSON(dummyData.messedUpData.js[2])).toThrowError(new ParseError(errorMessages.malformedJSData));
     });
     test("Successful JSON data returned", () => {
-        expect(transformJSToJSON(dummyData.js.es6)).toBe(dummyData.json)
-        expect(transformJSToJSON(dummyData.js.commonJS)).toBe(dummyData.json)
+        expect(transformJSToJSON(dummyData.js.es6)).toBe(dummyData.json);
+        expect(transformJSToJSON(dummyData.js.commonJS)).toBe(dummyData.json);
     });
 });
 
