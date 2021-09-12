@@ -10,5 +10,5 @@ coverage/
 .idea/
 *.env
 
-__dummy__/output-1.json
-__dummy__/output-2.js
+__tests__/output-1.json
+__tests__/output-2.js

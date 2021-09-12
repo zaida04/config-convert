@@ -20,8 +20,8 @@
     "test:build": "npm run build && npx jest --config jest.config.json",
     "prepublishOnly": "npm run lint && npm run build",
     "prepare": "husky install",
-    "test:js": "npx ts-node src/bin.ts -f __dummy__/test-config2.json -o __dummy__/output-2.js",
-    "test:json": "npx ts-node src/bin.ts -f __dummy__/test-config1.js -o __dummy__/output-1.json"
+    "test:js": "npx ts-node src/bin.ts -f __tests__/test-config2.json -o __tests__/output-2.js",
+    "test:json": "npx ts-node src/bin.ts -f __tests__/test-config1.js -o __tests__/output-1.json"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
