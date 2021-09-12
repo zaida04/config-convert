@@ -2,7 +2,7 @@
 
 export enum CONVERT_TYPES {
     toJS = "js",
-    toJSON = "json",
+    toJSON = "json"
 }
 
 export const betterLowerCase = <T extends string>(input: T) => input.toLowerCase() as Lowercase<T>;
@@ -12,7 +12,7 @@ export const DEFAULT_PRETTIER_CONFIG = {
     printWidth: 150,
     semi: true,
     tabWidth: 4,
-    trailingComma: "all",
+    trailingComma: "all"
 } as const;
 
 export const logger = (str: string, color: COLORS = COLORS.RESET) => console.log(color, str, COLORS.RESET);
@@ -23,5 +23,5 @@ export enum COLORS {
     YELLOW = "\x1b[33m",
     BGRED = "\x1b[41m",
     BGGREEN = "\x1b[42m",
-    BGYELLOW = "\x1b[43m",
+    BGYELLOW = "\x1b[43m"
 }

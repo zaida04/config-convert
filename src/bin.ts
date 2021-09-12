@@ -13,7 +13,7 @@ const parser = yargs(process.argv.slice(2))
         to: { choices: ["js", "json"] as const, describe: "What format to convert to", alias: ["t"] },
         output: { type: "string", describe: "The name of the output file.", alias: ["o"] },
         es6: { type: "boolean", describe: "For converting to JS, whether to use es6 exports." },
-        baseDir: { type: "string", describe: "Set the base dir of where to start the path.", alias: ["b"] },
+        baseDir: { type: "string", describe: "Set the base dir of where to start the path.", alias: ["b"] }
     });
 
 void (async () => {

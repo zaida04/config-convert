@@ -18,7 +18,7 @@ export const transformJSToJSON = (data: string) => {
             .substring(openingBracket - 1, closingBrack + 1)
             .trim()
             .replace(/([{,])(\s*)([A-Za-z0-9_\-]+?)\s*:/g, '$1"$3":')
-            .replace("'", '"'),
+            .replace("'", '"')
     );
     // return converted JSON data as a string, with 4 space formatting.
     return JSON.stringify(dataToConvert, null, 4);
