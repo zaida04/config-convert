@@ -62,5 +62,18 @@
   "bugs": {
     "url": "https://github.com/zaida04/config-convert/issues"
   },
-  "homepage": "https://github.com/zaida04/config-convert#readme"
+  "homepage": "https://github.com/zaida04/config-convert#readme",
+  "eslintConfig": {
+    "extends": "@sapphire"
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "printWidth": 150,
+    "semi": true,
+    "tabWidth": 4,
+    "trailingComma": "none"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix --ext ts"
+  }
 }
